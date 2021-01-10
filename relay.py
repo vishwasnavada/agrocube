@@ -24,8 +24,8 @@ Press CTRL+C to exit.
 
 def draw_states(channels):
     # Open our background image.
-    image = Image.open("images/agrocube.JPG")
-    draw = ImageDraw.Draw(image)
+    # image = Image.open("images/agrocube.JPG")
+    # draw = ImageDraw.Draw(image)
     offset = 0
 
     disp.display(image)
@@ -50,16 +50,18 @@ disp.begin()
 
 
 while True:
-       # Toggle channel back.
-       automationhat.relay.on()
-       time.sleep(1) 
-	   
-       # def draw_states(channels):
-       # Open our background image.
        image = Image.open("images/agrocube.JPG")
        draw = ImageDraw.Draw(image)
+       # Toggle channel back.
+       disp.display(image)
+       automationhat.relay.on()
+       time.sleep(1)
+       # def draw_states(channels):
+       # Open our background image.
+       #image = Image.open("images/agrocube.JPG")
+       #draw = ImageDraw.Draw(image)
        offset = 0
-	   automationhat.relay.off()
-       time.sleep(15)
-	   #increase the off time to required number of hours. i.e for 6 hours delay will be 21600 seconds 
-
+       automationhat.relay.off()
+       time.sleep(10)
+       #increase the off time to required number of hours. i.e for 6 hours delay will be 21600 seconds 
+       disp.display(image)
